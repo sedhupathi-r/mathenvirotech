@@ -4,8 +4,40 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
-import menuData from "./menuData";
 
+const menuData: any = [
+  {
+    id: 1,
+    title: "Home",
+    path: "/",
+    newTab: false,
+  },
+  {
+    id: 2,
+    title: "About",
+    path: "#about",
+    newTab: false,
+  },
+  {
+    id: 3,
+    title: "Services",
+    path: "#service",
+    newTab: false,
+  },
+  {
+    id: 4,
+    title: "Products",
+    path: "#products",
+    newTab: false,
+  },
+
+  {
+    id: 5,
+    title: "Contacts",
+    path: "#contact",
+    newTab: false,
+  },
+];
 const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -49,27 +81,30 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+            <div className="w-64 max-w-full px-4 xl:mr-6">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
+                className={`header-logo flex w-full justify-start gap-2 ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
+                  src="/images/small_lo 1 1.png"
                   alt="logo"
                   width={140}
                   height={30}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.svg"
+                  src="/images/small_lo 1 1.png"
                   alt="logo"
                   width={140}
                   height={30}
-                  className="hidden w-full dark:block"
+                  className="hidden  h-[50px] w-[50px] dark:block"
                 />
+                <span className="text-base font-semibold">
+                  MATH ENVIRO <br /> TECH
+                </span>
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">

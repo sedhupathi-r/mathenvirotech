@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
+import { sendGTMEvent } from "@next/third-parties/google";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 const Footer = () => {
   return (
@@ -11,25 +11,28 @@ const Footer = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
               <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 inline-block">
+                <Link href="/" className="mb-8 flex justify-start gap-2">
                   <Image
-                    src="/images/logo/logo-2.svg"
+                    src="/images/small_lo 1 1.png"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
                   />
                   <Image
-                    src="/images/logo/logo.svg"
+                    src="/images/small_lo 1 1.png"
                     alt="logo"
-                    className="hidden w-full dark:block"
+                    className="hidden h-[50x] w-[50px] dark:block"
                     width={140}
                     height={30}
                   />
+                  <span className="text-base font-semibold">
+                    MATH ENVIRO <br />
+                    TECH
+                  </span>
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                  Less cost because of pre-engineered, pre-fabricated structures
                 </p>
                 <div className="flex items-center">
                   <a
@@ -118,26 +121,34 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href="/blog"
+                      href="#about"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Blog
+                      about
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="#service"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Pricing
+                      Services
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="#products"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      About
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#contact"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      Contacts
                     </Link>
                   </li>
                 </ul>
@@ -177,63 +188,20 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Support & Help
-                </h2>
-                <ul>
-                  <li>
-                    <Link
-                      href="/contact"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Open Support Ticket
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Terms of Use
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      About
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              Template by{" "}
+              Copyright ©{" "}
               <a
-                href="http://uideck.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary"
               >
-                UIdeck
+                MathEnviroTech
               </a>{" "}
-              and{" "}
-              <a
-                href="https://nextjstemplates.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary"
-              >
-                Next.js Templates
-              </a>
             </p>
           </div>
         </div>
@@ -431,11 +399,11 @@ const Footer = () => {
 
       <FloatingWhatsApp
         onClick={() => {
-          // sendGTMEvent({ event: "buttonClicked", value: "whatsapp" });
+          sendGTMEvent({ event: "buttonClicked", value: "whatsapp" });
         }}
-        phoneNumber=""
-        accountName="support@letstrade.in"
-        avatar="/logo.png"
+        phoneNumber="+918270402031"
+        accountName="mathenvirotech"
+        avatar="/images/small_lo 1 1.png"
       />
     </>
   );
