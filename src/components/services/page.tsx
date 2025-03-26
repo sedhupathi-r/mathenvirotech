@@ -23,7 +23,7 @@ const serviceData: any = [
     title: "RO Plant",
     paragraph:
       "A reverse osmosis plant is a manufacturing plant where the process of reverse osmosis takes place.",
-    image: "/images/blog/blog-03.jpg",
+    image: "/images/reverse_ro.jpg",
   },
 ];
 

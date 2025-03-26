@@ -15,26 +15,26 @@ const menuData: any = [
   {
     id: 2,
     title: "About",
-    path: "#about",
+    path: "/about",
     newTab: false,
   },
   {
     id: 3,
     title: "Services",
-    path: "#service",
+    path: "/#service",
     newTab: false,
   },
   {
     id: 4,
     title: "Products",
-    path: "#products",
+    path: "/#products",
     newTab: false,
   },
 
   {
     id: 5,
     title: "Contacts",
-    path: "#contact",
+    path: "/contacts",
     newTab: false,
   },
 ];

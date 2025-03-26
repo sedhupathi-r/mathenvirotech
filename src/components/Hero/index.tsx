@@ -1,6 +1,11 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import ModalVideo from "react-modal-video";
+import { useState } from "react";
+import ParticleContainer from "../particles";
 const Hero = () => {
+  const [isOpen, setOpen] = useState(false);
   return (
     <>
       <section
@@ -9,6 +14,7 @@ const Hero = () => {
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
+            <ParticleContainer />{" "}
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
@@ -18,8 +24,8 @@ const Hero = () => {
                   We are leading one stop solution provider for waste water
                   problem.
                 </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
+                {/* <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"> */}
+                {/* <Link
                     href=""
                     className="px-2text-base inline-block rounded-lg bg-black p-2 font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
@@ -30,8 +36,77 @@ const Hero = () => {
                       height={30}
                       className="h-[200px] w-[450px] rounded-lg"
                     />
-                  </Link>
+                  </Link> */}
+
+                <div className="-mx-4 flex flex-wrap">
+                  <div className="w-full px-4">
+                    <div
+                      className="mx-auto max-w-[500px] overflow-hidden rounded-md"
+                      data-wow-delay=".15s"
+                    >
+                      {isOpen ? (
+                        <div className="relative  aspect-[77/40]   hover:block">
+                          <Image
+                            onClick={() => setOpen(false)}
+                            width={28}
+                            height={28}
+                            src="/close-line.svg"
+                            className="absolute right-1 top-0 z-10 flex h-7 w-7 cursor-pointer   items-end justify-end"
+                            alt="remove"
+                          />
+
+                          <video
+                            controls
+                            autoPlay
+                            className="h-[260px] w-[500px] "
+                          >
+                            <source
+                              src="/images/video/math_water.mp4"
+                              type="video/mp4"
+                            />
+                          </video>
+                        </div>
+                      ) : (
+                        // onMouseOver={() => setOpen(true)}
+                        <div
+                          onMouseOver={() => setOpen(true)}
+                          className="relative  aspect-[77/40] items-center justify-center "
+                        >
+                          <Image
+                            src="/images/nature.jpg"
+                            alt="video image"
+                            fill
+                          />
+                          <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
+                            <button
+                              onClick={() => setOpen(true)}
+                              aria-label="video play button"
+                              className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
+                            >
+                              <svg
+                                width="16"
+                                height="18"
+                                viewBox="0 0 16 18"
+                                className="fill-current"
+                              >
+                                <path d="M15.5 8.13397C16.1667 8.51888 16.1667 9.48112 15.5 9.86602L2 17.6603C1.33333 18.0452 0.499999 17.564 0.499999 16.7942L0.5 1.20577C0.5 0.43597 1.33333 -0.0451549 2 0.339745L15.5 8.13397Z" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
+                {/* <ModalVideo
+                  channel="custom"
+                  autoplay={true}
+                  start={true}
+                  isOpen={isOpen}
+                  videoId=""
+                  url="/images/video/math_water.mp4"
+                  onClose={() => setOpen(false)}
+                /> */}
               </div>
             </div>
           </div>
