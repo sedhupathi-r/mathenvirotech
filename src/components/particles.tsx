@@ -1,29 +1,43 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Particles from "react-particles";
-import { ISourceOptions } from "tsparticles-engine";
-import { loadBubblesPreset } from "tsparticles-preset-bubbles";
-import { loadFountainPreset } from "tsparticles-preset-fountain";
+import { type Engine } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
 export default function ParticleContainer() {
   const [init, setInit] = useState(false);
   useEffect(() => {
     setInit(true);
   }, []);
-  let particlesOptions = {
-    preset: "bubbles",
-  };
-
-  let particlesInit = async (engine) => {
-    await loadFountainPreset(engine);
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
+  const particlesOptions: any = {
+    particles: {
+      number: { value: 100, density: { enable: true, area: 600 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.4 },
+      size: { value: 2, random: true },
+      move: {
+        enable: true,
+        speed: 3,
+        direction: "bottom",
+        straight: true,
+      },
+    },
+    background: {
+      color: "transparent",
+    },
+    fullScreen: { enable: true },
   };
 
   if (init) {
     return (
       <Particles
-        id="tsparticles"
+        id="rainParticles"
         className="absolute bottom-0 top-0 h-full w-full bg-transparent"
-        options={particlesOptions}
         init={particlesInit}
+        options={particlesOptions}
       />
     );
   }

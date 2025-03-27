@@ -45,16 +45,10 @@ const Hero = () => {
                       data-wow-delay=".15s"
                     >
                       {isOpen ? (
-                        <div className="relative  aspect-[77/40]   hover:block">
-                          <Image
-                            onClick={() => setOpen(false)}
-                            width={28}
-                            height={28}
-                            src="/close-line.svg"
-                            className="absolute right-1 top-0 z-10 flex h-7 w-7 cursor-pointer   items-end justify-end"
-                            alt="remove"
-                          />
-
+                        <div
+                          onMouseOut={() => setOpen(false)}
+                          className="relative  aspect-[77/40]   hover:block"
+                        >
                           <video
                             controls
                             autoPlay
