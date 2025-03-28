@@ -28,7 +28,7 @@ export default function ParticleContainer() {
     background: {
       color: "transparent",
     },
-    fullScreen: { enable: true },
+    fullScreen: { enable: false },
   };
 
   if (init) {
